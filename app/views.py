@@ -1,10 +1,14 @@
 from app import app
 from flask import render_template, request, redirect, url_for, flash
-
+from datetime import datetime
 
 ###
 # Routing for your application.
 ###
+def format_date_joined(date_joined):
+    date_obj = datetime.strptime(date_joined, '%Y-%m-%d')
+    formatted_date = date_obj.strftime('%b, %Y')
+    return formatted_date
 
 @app.route('/')
 def home():
@@ -16,6 +20,29 @@ def home():
 def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
+
+@app.route('/profile')
+def profile():
+    """Render the website's profile page."""
+    user_info = {
+        'image_url': "{{url_for('static', filename=''app/static/ppic.jpg'')}}",
+        'full_name': 'Narika Hall',
+        'username': 'narihall',
+        'location': 'Kingston, Jamaica',
+        'join_date': '2021-02-21',  
+        'bio': 'Tech Fanatic, Nature Lover and Car Enthusiast.',
+        'posts_count': 10,
+        'followers_count': 70,
+        'following_count': 50,
+    }
+
+    # Format the join date using format_date_joined function
+    formatted_join_date = format_date_joined(user_info['join_date'])
+
+    user_info['formatted_join_date'] = formatted_join_date
+
+    return render_template('profile.html', user=user_info)
+
 
 
 ###

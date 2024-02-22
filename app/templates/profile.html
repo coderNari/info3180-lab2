@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/app.css')}}">
+{% endblock %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="profile">
+        {% block main %}
+        <div class="personal_info">
+            <img src="{{url_for('static', filename='app/static/ppic.jpg')}}" class='profile_pic' alt="profile picture">
+            <h1>{{ user.full_name }}</h1>
+            <p>@{{ user.username }}</p>
+            <p>{{ user.location }}</p>
+            <p>Joined: {{ user.formatted_join_date }}</p>
+        </div>
+        <div>{{ user.bio }}</div>
+        <div class="lower-half">
+            
+            <div class="account">
+                <div class="num">10</div>
+                <div class="label">Posts</div>
+            </div>
+            <div class="account">
+                <div class="num">30</div>
+                <div class="label">Following</div>
+            </div>
+            <div class="account">
+                <div class="num">50</div>
+                <div class="label">Followers</div>
+            </div>
+        </div>
+        <div>
+            <button>Follow</button>
+        </div>
+        {% endblock %}
+    </div>
+    
+</body>
+</html>

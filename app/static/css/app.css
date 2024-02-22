@@ -1,3 +1,85 @@
+
 body {
     padding-top: 5rem;
+    margin-top: 5%;
+    padding: 0;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    min-height: 100vh; 
+    background-color: antiquewhite;
+}
+
+
+.profile {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; /* Center content horizontally and vertically */
+    padding: 20px;
+    height: 100vh;
+    text-align: center;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.lower-half {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center; 
+    margin-top: 20px; 
+}
+
+.account {
+    display: flex;
+    flex-direction: column; /* Stack num and label vertically */
+    align-items: center;
+    margin-right: 20px;
+}
+
+.account .num {
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 5px; /* Add margin between num and label */
+}
+
+.label {
+    font-size: 20px;
+}
+
+
+
+.personal_info {
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: cornflowerblue;
+    color: aliceblue;
+}
+
+
+
+p {
+    font-size: 20px;
+}
+
+.num {
+    font-size: 40px;
+}
+
+
+button {
+    border: none;
+    background-color: cornflowerblue;
+    color: black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+img {
+    border-radius: 50%;
+    height: 100px;
 }
